@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
   s.name = 'tenkit'
   s.version = Tenkit::VERSION
-  s.required_ruby_version = '>= 2.6.7'
+  s.required_ruby_version = '>= 2.3.8'
   s.summary = 'Wrapper for WeatherKit API'
   s.description = 'Wrapper for Weatherkit API'
   s.author = 'James Pierce'
@@ -16,8 +16,8 @@ Gem::Specification.new do |s|
   s.license = 'MIT'
   s.files = Dir['lib/tenkit.rb', 'lib/**/*.rb']
 
-  s.add_dependency 'httparty', '~> 0.21.0'
-  s.add_dependency 'jwt', '~> 2.7.0'
+  s.add_dependency 'httparty', '~> 0.20.0'
+  s.add_dependency 'jwt', '~> 2.3.0'
 
   s.add_development_dependency 'bundler', '~> 2.3.17'
   s.add_development_dependency 'dotenv', '~> 2.8'
