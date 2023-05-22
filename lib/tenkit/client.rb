@@ -23,7 +23,7 @@ module Tenkit
       get("/availability/#{lat}/#{lon}?country=#{country}")
     end
 
-    def weather(lat, lon, data_sets: [:current_weather], language: 'en')
+    def weather(lat, lon, data_sets: [:current_weather], language: 'en', daily_start: nil, daily_end: nil, hourly_start: nil, hourly_end: nil)
       path_root = "/weather/#{language}/#{lat}/#{lon}"
       params = []
       params << "dataSets=" + data_sets.map { |ds| DATA_SETS[ds] }.compact.join(',')
