@@ -24,8 +24,15 @@ module Tenkit
     end
 
     def weather(lat, lon, data_sets: [:current_weather], language: 'en')
-      path_root = "/weather/#{language}/#{lat}/#{lon}?dataSets="
-      path = path_root + data_sets.map { |ds| DATA_SETS[ds] }.compact.join(',')
+      path_root = "/weather/#{language}/#{lat}/#{lon}"
+      params = []
+      params << "dataSets=" + data_sets.map { |ds| DATA_SETS[ds] }.compact.join(',')
+      params << "dailyStart=#{daily_start}" if daily_start
+      params << "dailyEnd=#{daily_end}" if daily_end
+      params << "hourlyStart=#{hourly_start}" if hourly_start
+      params << "hourlyEnd=#{hourly_end}" if hourly_end
+      path = path_root + "?" + params.join("&")
+      # puts "path: #{path}"
       response = get(path)
       WeatherResponse.new(response)
     end

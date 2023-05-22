@@ -13,7 +13,13 @@ module Tenkit
                 :weather_alerts
 
     def initialize(response)
+      # print "resonse.body #{response.body}"
+      if response.body.empty?
+        raise RuntimeError.new("No response body from weather API call")
+      end
+
       parsed_response = JSON.parse(response.body)
+      # puts "parsed_response: #{parsed_response}"
 
       current_weather = parsed_response['currentWeather']
       forecast_daily = parsed_response['forecastDaily']
