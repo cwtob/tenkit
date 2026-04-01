@@ -17,9 +17,9 @@ Gem::Specification.new do |s|
   s.files = Dir['lib/tenkit.rb', 'lib/**/*.rb']
 
   s.add_dependency 'httparty', '~> 0.20.0'
-  s.add_dependency 'jwt', '~> 2.3.0'
+  s.add_dependency 'jwt', '~> 2.10.2'
 
-  s.add_development_dependency 'bundler', '~> 2.3.17'
+  s.add_development_dependency 'bundler', '~> 4.0.6'
   s.add_development_dependency 'dotenv', '~> 2.8'
   s.add_development_dependency 'rake', '~> 12.3'
   s.add_development_dependency 'rspec', '~> 3.0'
